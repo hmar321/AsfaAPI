@@ -11,7 +11,7 @@ namespace AsfaAPI.Data
         public DbSet<Rol> Roles { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Apunte> Apuntes { get; set; }
-        public DbSet<CategoriaPregunta> CategoriasPreguntas { get; set; }
+        public DbSet<PreguntaCategoria> PreguntaCategorias { get; set; }
         public DbSet<Dificultad> Dificultades { get; set; }
         public DbSet<Duda> Dudas { get; set; }
         public DbSet<Examen> Examenes { get; set; }

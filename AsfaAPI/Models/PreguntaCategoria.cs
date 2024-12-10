@@ -3,12 +3,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AsfaAPI.Models
 {
-    [Table("CATEGORIA_PREGUNTA")]
-    public class CategoriaPregunta
+    [Table("PREGUNTA_CATEGORIA")]
+    public class PreguntaCategoria
     {
         [Key]
-        [Column("ID_CATEGORIA_PREGUNTA")]
-        public int IdCategoriaPregunta { get; set; }
+        [Column("ID_PREGUNTA_CATEGORIA")]
+        public int IdPreguntaCategoria { get; set; }
 
         [Column("NOMBRE")]
         public string Nombre { get; set; }

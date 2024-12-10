@@ -19,8 +19,8 @@ namespace AsfaAPI.Models
         [Column("F_CREACION")]
         public DateTime FechaCreacion { get; set; }
 
-        [Column("ID_CATEGORIA_PREGUNTA")]
-        public int IdCategoriaPregunta { get; set; }
+        [Column("ID_PREGUNTA_CATEGORIA")]
+        public int IdPreguntaCategoria { get; set; }
 
         [Column("ID_DIFICULTAD")]
         public int IdDificultad { get; set; }
