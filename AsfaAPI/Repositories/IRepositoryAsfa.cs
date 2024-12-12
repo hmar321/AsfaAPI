@@ -6,79 +6,79 @@ namespace AsfaAPI.Repositories
     {
         // Metodos para Rol
         Task<List<Rol>> GetRolesAsync();
-        Task<Rol> GetRolByIdAsync(int id);
+        Task<Rol> GetRolAsync(int id);
         Task<Rol> CreateRolAsync(string nombre, string? descripcion);
         Task<Rol> UpdateRolAsync(int id, string nombre, string? descripcion);
-        Task<int>  DeleteRolAsync(int id);
+        Task<int> DeleteRolAsync(int id);
 
         // Metodos para Usuario
         Task<List<Usuario>> GetUsuariosAsync();
-        Task<Usuario> GetUsuarioByIdAsync(int id);
+        Task<Usuario> GetUsuarioAsync(int id);
         Task<Usuario> CreateUsuarioAsync(string nombre, string dni, byte[] password, string salt, string? token, DateTime fechaRegistro, int idRol);
         Task<Usuario> UpdateUsuarioAsync(int id, string nombre, string dni, byte[] password, string salt, string? token, DateTime fechaRegistro, int idRol);
         Task<int> DeleteUsuarioAsync(int id);
 
         // Metodos para Apunte
         Task<List<Apunte>> GetApuntesAsync();
-        Task<Apunte> GetApunteByIdAsync(int id);
+        Task<Apunte> GetApunteAsync(int id);
         Task<Apunte> CreateApunteAsync(string texto);
         Task<Apunte> UpdateApunteAsync(int id, string texto);
         Task<int> DeleteApunteAsync(int id);
 
         // Metodos para PreguntaCategoria
-        Task<List<PreguntaCategoria>> GetCategoriasPreguntasAsync();
-        Task<PreguntaCategoria> GetPreguntaCategoriaByIdAsync(int id);
+        Task<List<PreguntaCategoria>> GetPreguntaCategoriasAsync();
+        Task<PreguntaCategoria> GetPreguntaCategoriaAsync(int id);
         Task<PreguntaCategoria> CreatePreguntaCategoriaAsync(string nombre, string? descripcion);
         Task<PreguntaCategoria> UpdatePreguntaCategoriaAsync(int id, string nombre, string? descripcion);
         Task<int> DeletePreguntaCategoriaAsync(int id);
 
         // Metodos para Dificultad
         Task<List<Dificultad>> GetDificultadesAsync();
-        Task<Dificultad> GetDificultadByIdAsync(int id);
-        Task<Dificultad> CreateDificultadAsync(Dificultad dificultad);
-        Task<Dificultad> UpdateDificultadAsync(int id, Dificultad dificultad);
+        Task<Dificultad> GetDificultadAsync(int id);
+        Task<Dificultad> CreateDificultadAsync(string nombre, string? descripcion);
+        Task<Dificultad> UpdateDificultadAsync(int id, string nombre, string? descripcion);
         Task<int> DeleteDificultadAsync(int id);
 
         // Metodos para Duda
         Task<List<Duda>> GetDudasAsync();
-        Task<Duda> GetDudaByIdAsync(int id);
-        Task<Duda> CreateDudaAsync(Duda duda);
-        Task<Duda> UpdateDudaAsync(int id, Duda duda);
+        Task<Duda> GetDudaAsync(int id);
+        Task<Duda> CreateDudaAsync(string texto, DateTime fechaCreacion, int idUsuario, int idPregunta, int? idResolucion);
+        Task<Duda> UpdateDudaAsync(int id, string texto, int idUsuario, int idPregunta, int? idResolucion);
         Task<int> DeleteDudaAsync(int id);
 
         // Metodos para Examen
         Task<List<Examen>> GetExamenesAsync();
-        Task<Examen> GetExamenByIdAsync(int id);
-        Task<Examen> CreateExamenAsync(Examen examen);
-        Task<Examen> UpdateExamenAsync(int id, Examen examen);
+        Task<Examen> GetExamenAsync(int id);
+        Task<Examen> CreateExamenAsync(DateTime fecha, int fallos, int duracion, bool aprobado, int idUsuario);
+        Task<Examen> UpdateExamenAsync(int id, int fallos, int duracion, bool aprobado, int idUsuario);
         Task<int> DeleteExamenAsync(int id);
 
         // Metodos para Fallo
         Task<List<Fallo>> GetFallosAsync();
-        Task<Fallo> GetFalloByIdAsync(int id);
-        Task<Fallo> CreateFalloAsync(Fallo fallo);
-        Task<Fallo> UpdateFalloAsync(int id, Fallo fallo);
+        Task<Fallo> GetFalloAsync(int id);
+        Task<Fallo> CreateFalloAsync(int idUsuario, int idPregunta);
+        Task<Fallo> UpdateFalloAsync(int id, int idUsuario, int idPregunta);
         Task<int> DeleteFalloAsync(int id);
 
         // Metodos para Pregunta
         Task<List<Pregunta>> GetPreguntasAsync();
-        Task<Pregunta> GetPreguntaByIdAsync(int id);
+        Task<Pregunta> GetPreguntaAsync(int id);
         Task<Pregunta> CreatePreguntaAsync(string texto, string? urlImg, DateTime fechaCreacion, int idPreguntaCategoria, int idDificultad, int? idApunte);
-        Task<Pregunta> UpdatePreguntaAsync(int id, string texto, string? urlImg, DateTime fechaCreacion, int idPreguntaCategoria, int idDificultad, int? idApunte);
+        Task<Pregunta> UpdatePreguntaAsync(int id, string texto, string? urlImg, int idPreguntaCategoria, int idDificultad, int? idApunte);
         Task<int> DeletePreguntaAsync(int id);
 
         // Metodos para Resolucion
         Task<List<Resolucion>> GetResolucionesAsync();
-        Task<Resolucion> GetResolucionByIdAsync(int id);
-        Task<Resolucion> CreateResolucionAsync(Resolucion resolucion);
-        Task<Resolucion> UpdateResolucionAsync(int id, Resolucion resolucion);
+        Task<Resolucion> GetResolucionAsync(int id);
+        Task<Resolucion> CreateResolucionAsync(string texto, DateTime fechaCreacion, int idUsuario);
+        Task<Resolucion> UpdateResolucionAsync(int id, string texto, int idUsuario);
         Task<int> DeleteResolucionAsync(int id);
 
         // Metodos para Respuesta
         Task<List<Respuesta>> GetRespuestasAsync();
-        Task<Respuesta> GetRespuestaByIdAsync(int id);
-        Task<Respuesta> CreateRespuestaAsync(Respuesta respuesta);
-        Task<Respuesta> UpdateRespuestaAsync(int id, Respuesta respuesta);
+        Task<Respuesta> GetRespuestaAsync(int id);
+        Task<Respuesta> CreateRespuestaAsync(string texto, bool correcta, int idPregunta);
+        Task<Respuesta> UpdateRespuestaAsync(int id, string texto, bool correcta, int idPregunta);
         Task<int> DeleteRespuestaAsync(int id);
     }
 
