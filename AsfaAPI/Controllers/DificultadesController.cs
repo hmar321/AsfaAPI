@@ -17,7 +17,7 @@ namespace AsfaAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Dificultad>>> GetDificultad()
+        public async Task<ActionResult<List<Dificultad>>> GetDificultades()
         {
             // Llama al repositorio para obtener la lista de dificultades de la base de datos
             List<Dificultad> dificultades = await _repo.GetDificultadesAsync();

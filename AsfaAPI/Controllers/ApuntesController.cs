@@ -17,7 +17,7 @@ namespace AsfaAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Apunte>>> GetApunte()
+        public async Task<ActionResult<List<Apunte>>> GetApuntes()
         {
             // Llama al repositorio para obtener la lista de apuntes de la base de datos
             List<Apunte> apuntes = await _repo.GetApuntesAsync();

@@ -17,7 +17,7 @@ namespace AsfaAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Examen>>> GetExamen()
+        public async Task<ActionResult<List<Examen>>> GetExamenes()
         {
             // Llama al repositorio para obtener la lista de examenes de la base de datos
             List<Examen> examenes = await _repo.GetExamenesAsync();

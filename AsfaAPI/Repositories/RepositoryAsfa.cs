@@ -165,7 +165,7 @@ namespace AsfaAPI.Repositories
             return newUsuario;
         }
 
-        public async Task<Usuario> UpdateUsuarioAsync(int id, string nombre, string dni, byte[] password, string salt, string? token, DateTime fechaRegistro, int idRol)
+        public async Task<Usuario> UpdateUsuarioAsync(int id, string nombre, string dni, byte[] password, string salt, string? token, int idRol)
         {
             // Busca el registro existente por ID
             Usuario usuario = await this.GetUsuarioAsync(id);
@@ -177,7 +177,6 @@ namespace AsfaAPI.Repositories
                 usuario.Password = password;
                 usuario.Salt = salt;
                 usuario.Token = token;
-                usuario.FechaRegistro = fechaRegistro;
                 usuario.IdRol = idRol;
                 // Guarda los cambios en la base de datos
                 await _context.SaveChangesAsync();

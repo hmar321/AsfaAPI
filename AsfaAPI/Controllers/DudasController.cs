@@ -17,7 +17,7 @@ namespace AsfaAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Duda>>> GetDuda()
+        public async Task<ActionResult<List<Duda>>> GetDudas()
         {
             // Llama al repositorio para obtener la lista de dudas de la base de datos
             List<Duda> dudas = await _repo.GetDudasAsync();

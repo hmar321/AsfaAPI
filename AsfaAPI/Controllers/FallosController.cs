@@ -17,7 +17,7 @@ namespace AsfaAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Fallo>>> GetFallo()
+        public async Task<ActionResult<List<Fallo>>> GetFallos()
         {
             // Llama al repositorio para obtener la lista de fallos de la base de datos
             List<Fallo> fallos = await _repo.GetFallosAsync();

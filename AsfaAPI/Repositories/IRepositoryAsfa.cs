@@ -15,7 +15,7 @@ namespace AsfaAPI.Repositories
         Task<List<Usuario>> GetUsuariosAsync();
         Task<Usuario> GetUsuarioAsync(int id);
         Task<Usuario> CreateUsuarioAsync(string nombre, string dni, byte[] password, string salt, string? token, DateTime fechaRegistro, int idRol);
-        Task<Usuario> UpdateUsuarioAsync(int id, string nombre, string dni, byte[] password, string salt, string? token, DateTime fechaRegistro, int idRol);
+        Task<Usuario> UpdateUsuarioAsync(int id, string nombre, string dni, byte[] password, string salt, string? token, int idRol);
         Task<int> DeleteUsuarioAsync(int id);
 
         // Metodos para Apunte
